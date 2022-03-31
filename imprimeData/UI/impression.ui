@@ -7,16 +7,30 @@
     <x>0</x>
     <y>0</y>
     <width>774</width>
-    <height>688</height>
+    <height>719</height>
    </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::ClickFocus</enum>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QCentralwidget{
+border:none;
+}</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetMaximumSize</enum>
+    </property>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMaximumSize</enum>
+      </property>
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
@@ -28,7 +42,9 @@
        <widget class="QLineEdit" name="line_name">
         <property name="styleSheet">
          <string notr="true">QLineEdit{
-border:2px solid blue;}</string>
+border:2px solid blue;}
+QLineEdit:focus{
+border:2px solid red;}</string>
         </property>
        </widget>
       </item>
@@ -41,9 +57,14 @@ border:2px solid blue;}</string>
       </item>
       <item>
        <widget class="QLineEdit" name="line_last_name">
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
         <property name="styleSheet">
          <string notr="true">QLineEdit{
-border:2px solid blue;}</string>
+border:2px solid blue;}
+QLineEdit:focus{
+border:2px solid red;}</string>
         </property>
        </widget>
       </item>
@@ -58,11 +79,21 @@ border:2px solid blue;}</string>
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
       <item>
        <widget class="QPushButton" name="btn_reset">
         <property name="styleSheet">
          <string notr="true">QPushButton{
-color:red;}</string>
+color:red;
+font:Normal 17 bold;}</string>
         </property>
         <property name="text">
          <string>Reset</string>
@@ -73,7 +104,8 @@ color:red;}</string>
        <widget class="QPushButton" name="btn_save">
         <property name="styleSheet">
          <string notr="true">QPushButton{
-color:green;}</string>
+color:green;
+font:Normal 17 bold;}</string>
         </property>
         <property name="text">
          <string>save</string>
@@ -81,13 +113,28 @@ color:green;}</string>
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="btn_refresh">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+color:black;
+font:Normal 17 bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Refresh</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="btn_print_file">
         <property name="styleSheet">
          <string notr="true">QPushButton{
-color:brown;}</string>
+color:brown;
+font:Normal 17 bold;
+}</string>
         </property>
         <property name="text">
-         <string>print file</string>
+         <string>Print file</string>
         </property>
        </widget>
       </item>
@@ -95,10 +142,11 @@ color:brown;}</string>
        <widget class="QPushButton" name="btn_preview">
         <property name="styleSheet">
          <string notr="true">QPushButton{
-color:blue;}</string>
+color:blue;
+font:Normal 17 bold;}</string>
         </property>
         <property name="text">
-         <string>print preview</string>
+         <string>Print preview</string>
         </property>
        </widget>
       </item>
@@ -106,9 +154,14 @@ color:blue;}</string>
     </item>
     <item>
      <widget class="QTextEdit" name="view">
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{
-border:2px solid blue;}</string>
+border:2px solid blue;}
+QTextEdit:focus{
+border:2px solid red;}</string>
       </property>
       <property name="placeholderText">
        <string>talk about</string>
@@ -118,7 +171,7 @@ border:2px solid blue;}</string>
     <item>
      <widget class="QTableWidget" name="view_infos">
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>175</number>
+       <number>250</number>
       </attribute>
       <column>
        <property name="text">
@@ -127,17 +180,50 @@ border:2px solid blue;}</string>
        <property name="font">
         <font>
          <pointsize>13</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
         </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+       <property name="background">
+        <color>
+         <red>149</red>
+         <green>228</green>
+         <blue>121</blue>
+        </color>
        </property>
       </column>
       <column>
        <property name="text">
         <string>LAST NAME</string>
        </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
       </column>
       <column>
        <property name="text">
         <string>COMMENTS</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
        </property>
        <property name="background">
         <color>
